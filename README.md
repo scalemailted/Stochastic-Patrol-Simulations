@@ -10,9 +10,9 @@
 
 ## Motivation - Two Considerations
 
-The motivation behind this project was to find a solution to the conflicting demands of unpredictable patrols and guaranteed coverage of the observable space. In many real-world scenarios, it is important to have a patrol scheme that is unpredictable to prevent pattern recognition and exploitation. At the same time, it is equally important to ensure that the entire domain space is surveyed.
+The motivation behind this project was to find a solution to the conflicting demands of unpredictable patrols and guaranteed coverage of the observable space. It is important to have a patrol scheme that is unpredictable to prevent pattern recognition and exploitation. At the same time, it is equally important to ensure that the entire domain space is surveyed.
 
-Traditional approaches, such as using a completely deterministic method, fail to meet the requirement of unpredictability, while a purely stochastic approach does not guarantee that the entire space will be covered. This project aimed to bridge this gap by devising a non-predictable patrol strategy that still guarantees full coverage of the observable space. The end goal was to provide a solution that balances the two conflicting demands, ensuring both unpredictability and guaranteed coverage.
+On the one hand, deterministic methods fail to meet the requirement of unpredictability, while on the other hand, a purely stochastic approach does not guarantee that the entire space will be covered. This project aimed to bridge this gap by devising a non-predictable patrol strategy that still guarantees full coverage of the observable space. The end goal is to provide a solution that balances the two conflicting demands, ensuring both unpredictability and guaranteed coverage.
 
 ---
 ## Approach - Stochastic + Deterministic
