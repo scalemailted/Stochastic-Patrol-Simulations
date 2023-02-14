@@ -20,4 +20,19 @@ Traditional approaches, such as using a completely deterministic method, fail to
 
 [API - Python + CoppelliaSim](API.md)
 
+---
+
+
+## CoppeliaSim Simulation for Stochastic Patrol Plan
+
+![CoppeliaSim Demo](./Assets/coppeliasim-demo.gif)
+
+
+---
+
+
+## JavaScript Demo for Stochastic Patrol Plan
+
+
+
 
