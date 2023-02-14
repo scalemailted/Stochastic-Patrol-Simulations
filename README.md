@@ -29,7 +29,7 @@ The combination of random sampling, weighted path selection, and curvy paths pro
 
 ## API Documentation
 
-[API - Python + CoppelliaSim](API.md)
+📚 **[API - Python + CoppelliaSim](API.md)**
 
 ---
 
