@@ -26,6 +26,19 @@ To allow for an even more comprehensive survey and optimize each pass, the obser
 The combination of random sampling, weighted path selection, and curvy paths provides a flexible and efficient approach for patrolling a designated space.
 
 ---
+## Algorithmic Overview - Methods
+
+In this simulation, a quadcopter is tasked with patrolling a region in an unpredictable way. This approach divides the world into a grid of viewable cells which represents what the rotocopter can observe at any given time, however, the quadcopter is not limited to moving only along the grid. Its mobility allows it to make non-grid movements, creating an environment that operates in both a gridded and continuous coordinate systems.
+
+The quadcopter sets out on its mission by moving towards random waypoints, determined by the select_random_waypoint function. The specifics of the simulation, such as world size, cell size, quadcopter speed, enemy count, and enemy speed, are all stored in a data dictionary. 
+
+The grid is created by the init_grid function, which adds cells to the grid at specific positions (i,j) using the add_masking_cell function. The get_world_coordinates and get_grid_coordinates functions allow for easy conversion between world and grid coordinates. The remove_from_grid function can remove cells from the grid, while the move_to_waypoint function moves the quadcopter towards its next waypoint, taking into account its speed and step size. The check_waypoint_reached function determines if the quadcopter has reached its waypoint, and the unmask_cell_at_observer function removes the cell at the quadcopter's position.
+
+To add excitement to the simulation, the init_enemies function adds a number of enemies, represented by red cubes, to the world. The move_to_random_adjacent_cell function moves each enemy to a randomly chosen adjacent cell. They actively avoid the cell the player is in.
+
+The sysCall_thread function serves as the main thread of the simulation, initializing the floor, grid, and enemies, and then running an infinite loop that moves the quadcopter and enemies, removes cells from the grid, and checks for either the capture of an enemy or the reaching of a waypoint.
+
+---
 
 ## API Documentation
 
