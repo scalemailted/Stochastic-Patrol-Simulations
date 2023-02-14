@@ -18,7 +18,7 @@ Adds a masking cell to the simulation at the given indices
 
 ---
 
-## calculate_weight
+## `calculate_weight`
 
 Calculates the weight (importance) of an unvisited cell
 
