@@ -3,16 +3,28 @@
 
 ---
 
+## `add_enemy`
+Adds an enemy to the simulation at the given grid cell
+
+#### Parameters
+- `i` (int): the row position of the cell
+- `j` (int): the column position of the cell
+
+#### Returns
+- `int`: the handle of the created enemy object
+
+---
+
 ## `add_masking_cell`
 
 Adds a masking cell to the simulation at the given indices
 
-### Parameters
+#### Parameters
 
 - `i` (int): The row index of the cell to be added
 - `j` (int): The column index of the cell to be added
 
-### Returns
+#### Returns
 
 - `cell_handle` (int): The handle of the created cell
 
@@ -22,7 +34,7 @@ Adds a masking cell to the simulation at the given indices
 
 Calculates the weight (importance) of an unvisited cell
 
-### Parameters
+#### Parameters
 
 - `unvisited` (np.array): the unvisited cell to calculate the weight for
 - `src` (np.array): the source position
@@ -30,7 +42,7 @@ Calculates the weight (importance) of an unvisited cell
 - `visited_len` (int): the length of the visited mask
 - `unvisited_len` (int): the length of the unvisited mask
 
-### Returns
+#### Returns
 
 - `float`: the weight of the unvisited cell
 
@@ -51,11 +63,11 @@ Determines if the source has reached the next waypoint (or enemy)
 
 Global datastore for simulation features
 
-### Parameters
+#### Parameters
 
 - `prop` (str): the property to retrieve
 
-### Returns
+#### Returns
 
 - `float` or `int`: the value of the requested property
 
@@ -89,12 +101,12 @@ Calculates the angle between the current position and the destination
 
 Calculates the ranges of the x and y axis of the world
 
-### Parameters
+#### Parameters
 
 - `width` (float): the width of the world
 - `length` (float): the length of the world
 
-### Returns
+#### Returns
 
 - `tuple`: the ranges of the x and y axis of the world
 
@@ -118,11 +130,11 @@ Determines the destination for the agent to move to
 
 Convert world coordinates to grid position. Note: The grid position is left aligned at 0, while the world coordinates are center aligned on objects.
 
-### Parameters
+#### Parameters
 
 - `world_pos` ([float, float]): Position in the world represented as (x, y) coordinates.
 
-### Returns
+#### Returns
 
 - `[int, int]`: The grid position corresponding to the world coordinates.
 
@@ -138,6 +150,14 @@ Calculates the new position of the agent based on the angle and step size
 
 #### Returns:
 - list: the new position of the agent as a list of x, y, and z coordinates
+
+---
+
+## `get_observer_coordinates`
+Queries the row and column position of the observer (quadcopter) in the grid
+
+#### Returns
+- `tuple (int, int)`: the row and column position of the observer in the grid
 
 ---
 
@@ -160,13 +180,40 @@ Calculates the weight of all the unvisited cells.
 
 Convert grid position to world coordinates. Note: The grid position is left aligned at 0, while the world coordinates are center aligned on objects.
 
-### Parameters
+#### Parameters
 
 - `grid_pos` ([int, int]): Position in the grid represented as (row, column) indices.
 
-### Returns
+#### Returns
 
 - `[float, float]`: The world coordinates corresponding to the grid position.
+
+---
+
+## `get_world_size`
+Queries the ranges of the x and y values of the world model box
+
+#### Returns
+- `tuple`: the ranges of the x and y values of the world model box
+
+---
+
+
+## `hide_default_floor`
+Hides the default floor in the simulation
+
+---
+
+## `init_enemies`
+Initialize the enemies in the simulation
+
+#### Returns
+- `List of int`: the handles of the created enemy objects
+
+---
+
+## `init_floor2d`
+Initialize the 2D floor in the simulation. The approach used is to texture a single cube face into a grid to be more performant by reducing geometry
 
 ---
 
@@ -174,9 +221,18 @@ Convert grid position to world coordinates. Note: The grid position is left alig
 
 Initialize the grid of cells in the simulation environment.
 
-### Returns
+#### Returns
 
 - `grid` (np.array): 2D array of ints representing the handles of the mask cells in the grid.
+
+---
+
+## `move_to_random_adjacent_cell`
+Move an enemy to a random adjacent cell
+
+#### Parameters
+- `src_handle` (int): the handle of the enemy object to move
+- `mask2d` (2D list, optional): tracks masked cells, and hides enemy 
 
 ---
 
@@ -194,7 +250,7 @@ Move the quadcopter towards the next waypoint
 
 Remove Object from Grid Cell
 
-### Parameters
+#### Parameters
 
 - `i` (int): Row index of the cell in the grid.
 - `j` (int): Column index of the cell in the grid.
@@ -206,11 +262,11 @@ Remove Object from Grid Cell
 
 Select a random unvisited cell from the given masked grid as the next waypoint.
 
-### Parameters
+#### Parameters
 
 - `mask2d` (np.ndarray): 2D array of cell handles representing the masked grid.
 
-### Returns
+#### Returns
 
 - `[np.ndarray, np.ndarray]`: The world position of the selected waypoint and the updated masked grid.
 
@@ -221,4 +277,17 @@ Select a random unvisited cell from the given masked grid as the next waypoint.
 Main Thread for Simulation. Initializes the grid, generates the enemies, moves the quadcopter and enemies, and checks if the quadcopter touched either the enemies or the waypoint.
 
 ---
+
+
+## `unmask_cell_at_observer`
+Unmasks the cell at the observer's position in the grid
+
+#### Parameters
+- `mask2d` (list of list): the 2D mask indicating which cells in the grid have been visited
+
+---
+
+
+
+
 
