@@ -32,7 +32,9 @@ Traditional approaches, such as using a completely deterministic method, fail to
 
 
 ## JavaScript Demo for Stochastic Patrol Plan
-<iframe src="https://scalemailted.github.io/Stochastic-Patrol-Simulations/WebApp/Patrol-Adversarial/" title="Patrol Adversarial"></iframe>
+
+[![Demo: Patrol Alone](./Assets/jsdemo-alone.gif)](https://scalemailted.github.io/Stochastic-Patrol-Simulations/WebApp/Patrol-Alone/)
+[![Demo: Patrol Adversary](./Assets/jsdemo-adversary.gif)](https://scalemailted.github.io/Stochastic-Patrol-Simulations/WebApp/Patrol-Adversarial/)
 
 
 
